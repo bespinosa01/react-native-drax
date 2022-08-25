@@ -870,4 +870,9 @@ export interface DraxListProps<TItem> extends Omit<FlatListProps<TItem>, 'render
 
 	/** Function that receives an item and returns a list of DraxViewProps to apply to that item's DraxView */
 	viewPropsExtractor?: (item: TItem) => Partial<DraxViewProps>;
+	/** Because Flatlist can't easily be wrapped, using the flatlist and the numColumns prop we can create a faux wrapped lis
+	 * To make animations a bit more UI/UX friendly we need to use the horizontal aniations even though list is technically vertical
+	 * Otherwise items translate along the Y axis, this allows them to translate across X axis 
+	 */
+	useHorizontalAnimations?: boolean;
 }

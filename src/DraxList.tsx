@@ -75,6 +75,7 @@ const DraxListUnforwarded = <T extends unknown>(
 		itemsDraggable = true,
 		lockItemDragsToMainAxis = false,
 		longPressDelay = defaultListItemLongPressDelay,
+		useHorizontalAnimations,
 		...flatListProps
 	} = props;
 
@@ -191,7 +192,7 @@ const DraxListUnforwarded = <T extends unknown>(
 	const getShiftTransform = useCallback(
 		(index: number) => {
 			const shift = shiftsRef.current[index]?.animatedValue ?? 0;
-			return horizontal
+			return horizontal || useHorizontalAnimations
 				? [{ translateX: shift }]
 				: [{ translateY: shift }];
 		},

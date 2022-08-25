@@ -1,5 +1,5 @@
 {
-	"name": "react-native-drax",
+	"name": "@bespinosa01/react-native-drax",
 	"version": "0.10.2",
 	"description": "A drag-and-drop system for React Native",
 	"repository": {
